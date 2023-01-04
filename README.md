@@ -69,6 +69,8 @@ class Segmentation( ):
 
 #### Segment Optimiztion TF 2.X #### 
 
+This is the same way you do it by custom layer or you can use the custom Dense layer for model or sequence call () learning.
+
 ```
 class SeqmentationOptimization(tf.keras.layers.Layer):
     def __init__(self):
