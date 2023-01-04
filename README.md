@@ -1,6 +1,6 @@
 # Optimizing_dimensions_values
 
-For Study Optimizing Dimensions values 3D, working with 3D objects its required dimensions to estimate of object shape and its neightbours. 
+For Study Optimizing Dimensions values 3D, working with 3D objects its required dimensions to estimate of object shape and its neightbours. Benefits cross functions method verification.
 
 ## Loss function optimizing values ##
 
