@@ -1,4 +1,5 @@
 # Optimizing_dimensions_values
+
 For Study Optimizing Dimensions values 3D, working with 3D objects its required dimensions to estimate of object shape and its neightbours. 
 
 ## Loss function optimizing values ##
@@ -28,6 +29,8 @@ sess.close()
 ```
 
 #### Segment Optimiztion TF 1.X #### 
+
+Our custom class for segmentation problems, one more example about optimizing of input values and the prediction series are different method but we use to examine of its method, that is different method verification example. Preciction series has its semilarities but you still cannot tell the exacts that performance of the method is correct wheter the semilarities values is close or large but with different method by optimitimizing input values results in sigma values and during optimizing you can notice from target value change to prediction values.  
 
 ```
 class Segmentation( ):
