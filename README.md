@@ -109,10 +109,18 @@ class SeqmentationOptimization(tf.keras.layers.Layer):
 
 ## Results ##
 
+#### Optimizing loss values running and its reflection. ####
+
 ![Loss values](https://github.com/jkaewprateep/Optimizing_dimensions_values/blob/main/Figure_2.png "Loss values")
+
+#### Input shape, dimensions or values. ####
 
 ![Shape](https://github.com/jkaewprateep/Optimizing_dimensions_values/blob/main/Figure_3.png "Shape")
 
+#### Optimizer values. ####
+
 ![Optimizing Shape](https://github.com/jkaewprateep/Optimizing_dimensions_values/blob/main/Figure_4.png "Optimizing Shape")
+
+#### Time series predictions. ####
 
 ![Series Prediction](https://github.com/jkaewprateep/Optimizing_dimensions_values/blob/main/Figure_5.png "Series Prediction")
