@@ -25,6 +25,69 @@ with tf.compat.v1.Session() as sess:
 sess.close()
 ```
 
+#### Segment Optimiztion TF 1.X #### 
+
+```
+class Segmentation( ):
+	def __init__( self, scale , sigma , min_size ):
+		
+		print( 'start __init__: ' )
+		self.scale = scale
+		self.sigma = sigma
+		self.min_size = min_size
+		
+		scale = tf.compat.v1.get_variable('scale', dtype = tf.float32, initializer = tf.random.normal((1, 10, 1)))
+		sigma = tf.compat.v1.get_variable('sigma', dtype = tf.float32, initializer = tf.random.normal((1, 10, 1)))
+		min_size = tf.compat.v1.get_variable('min_size', dtype = tf.float32, initializer = tf.random.normal((1, 10, 1)))
+		
+		Z = tf.nn.l2_loss( ( scale - sigma ) +( scale - min_size ) , name="loss")
+		loss = tf.reduce_mean(input_tensor=tf.square(Z))
+		
+		optimizer = tf.compat.v1.train.ProximalAdagradOptimizer(
+		learning_rate,
+		initial_accumulator_value=0.1,
+		l1_regularization_strength=0.2,
+		l2_regularization_strength=0.1,
+		use_locking=False,
+		name='ProximalAdagrad'
+		)
+		training_op = optimizer.minimize(loss)
+		
+		self.loss = loss
+		self.scale = scale
+		self.sigma = sigma
+		self.min_size = min_size
+		self.training_op = training_op
+		
+		return 
+```
+
+#### Segment Optimiztion TF 2.X #### 
+
+```
+class SeqmentationOptimization(tf.keras.layers.Layer):
+    def __init__(self):
+        super(SeqmentationOptimization, self).__init__()
+        scale_init = tf.keras.initializers.RandomUniform(minval=10, maxval=1000, seed=None)
+        sigma_init = tf.keras.initializers.RandomUniform(minval=0.001, maxval=1, seed=None)
+        min_size_init = tf.keras.initializers.RandomUniform(minval=10, maxval=1000, seed=None)
+
+        self.scale = self.add_weight(shape=[1],
+                                initializer = scale_init,
+                                trainable=True)
+        self.sigma = self.add_weight(shape=[1],
+                                initializer = sigma_init,
+                                trainable=True)
+        
+        self.min_size = self.add_weight(shape=[1],
+                                initializer = min_size_init,
+                                trainable=True)
+
+    def call(self, inputs):
+        objects = Segmentation(self.scale , self.sigma , self.min_size ).objects
+        return 
+```
+
 ## Files and Directory ##
 
 | File Name | Description |
