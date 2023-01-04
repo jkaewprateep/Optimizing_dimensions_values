@@ -33,6 +33,7 @@ sess.close()
 | Figure_2.png | Training Loss values |
 | Figure_3.png | Target Shape |
 | Figure_4.png | Optimizing Shape |
+| Figure_5.png | Optimizing Shape |
 | README.md | readme file |
 
 
@@ -43,3 +44,5 @@ sess.close()
 ![Shape](https://github.com/jkaewprateep/Optimizing_dimensions_values/blob/main/Figure_3.png "Shape")
 
 ![Optimizing Shape](https://github.com/jkaewprateep/Optimizing_dimensions_values/blob/main/Figure_4.png "Optimizing Shape")
+
+![Series Prediction](https://github.com/jkaewprateep/Optimizing_dimensions_values/blob/main/Figure_5.png "Series Prediction")
