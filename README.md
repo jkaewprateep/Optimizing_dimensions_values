@@ -30,7 +30,7 @@ sess.close()
 
 #### Segment Optimiztion TF 1.X #### 
 
-Our custom class for segmentation problems, one more example about optimizing of input values and the prediction series are different method but we use to examine of its method, that is different method verification example. Preciction series has its semilarities but you still cannot tell the exacts that performance of the method is correct wheter the semilarities values is close or large but with different method by optimitimizing input values results in sigma values and during optimizing you can notice from target value change to prediction values.  
+Our custom class for segmentation problems, one more example about optimizing input values and the prediction series are different methods but we use them to examine its method, which is a different method verification example. Prediction series has its similarities but you still cannot tell whether the exact that performance of the method is correct or whether the similarities values is close or large with the different method optimizing input values results in sigma values and during optimizing you can notice from target value change to prediction values.
 
 ```
 class Segmentation( ):
