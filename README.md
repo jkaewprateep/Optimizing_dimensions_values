@@ -29,37 +29,37 @@ sess.close()
 
 ```
 class Segmentation( ):
-	def __init__( self, scale , sigma , min_size ):
+    def __init__( self, scale , sigma , min_size ):
 		
-		print( 'start __init__: ' )
-		self.scale = scale
-		self.sigma = sigma
-		self.min_size = min_size
+        print( 'start __init__: ' )
+        self.scale = scale
+        self.sigma = sigma
+        self.min_size = min_size
 		
-		scale = tf.compat.v1.get_variable('scale', dtype = tf.float32, initializer = tf.random.normal((1, 10, 1)))
-		sigma = tf.compat.v1.get_variable('sigma', dtype = tf.float32, initializer = tf.random.normal((1, 10, 1)))
-		min_size = tf.compat.v1.get_variable('min_size', dtype = tf.float32, initializer = tf.random.normal((1, 10, 1)))
+        scale = tf.compat.v1.get_variable('scale', dtype = tf.float32, initializer = tf.random.normal((1, 10, 1)))
+        sigma = tf.compat.v1.get_variable('sigma', dtype = tf.float32, initializer = tf.random.normal((1, 10, 1)))
+        min_size = tf.compat.v1.get_variable('min_size', dtype = tf.float32, initializer = tf.random.normal((1, 10, 1)))
 		
-		Z = tf.nn.l2_loss( ( scale - sigma ) +( scale - min_size ) , name="loss")
-		loss = tf.reduce_mean(input_tensor=tf.square(Z))
+        Z = tf.nn.l2_loss( ( scale - sigma ) +( scale - min_size ) , name="loss")
+        loss = tf.reduce_mean(input_tensor=tf.square(Z))
 		
-		optimizer = tf.compat.v1.train.ProximalAdagradOptimizer(
-		learning_rate,
-		initial_accumulator_value=0.1,
-		l1_regularization_strength=0.2,
-		l2_regularization_strength=0.1,
-		use_locking=False,
-		name='ProximalAdagrad'
-		)
-		training_op = optimizer.minimize(loss)
+        optimizer = tf.compat.v1.train.ProximalAdagradOptimizer(
+        learning_rate,
+        initial_accumulator_value=0.1,
+        l1_regularization_strength=0.2,
+        l2_regularization_strength=0.1,
+        use_locking=False,
+        name='ProximalAdagrad'
+        )
+        training_op = optimizer.minimize(loss)
 		
-		self.loss = loss
-		self.scale = scale
-		self.sigma = sigma
-		self.min_size = min_size
-		self.training_op = training_op
+        self.loss = loss
+        self.scale = scale
+        self.sigma = sigma
+        self.min_size = min_size
+        self.training_op = training_op
 		
-		return 
+        return 
 ```
 
 #### Segment Optimiztion TF 2.X #### 
