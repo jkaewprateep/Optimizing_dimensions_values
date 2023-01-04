@@ -5,7 +5,9 @@ For Study Optimizing Dimensions values 3D, working with 3D objects its required 
 
 We consider of both sigma values and minimum size scalable, optimizer adjusting of input dimensions value by sigma value called differentate equation as its nature optimize one dimension create feedback to next dimension with in the same equation. ``` Z = tf.nn.l2_loss( ( scale - sigma ) + ( scale - min_size ) , name="loss") ```
 
-#### Sections run optimizing #### 
+#### Sections run optimize #### 
+
+Simply equation to optimizing input values with our custom optimizers class or equation ``` Z = tf.nn.l2_loss( ( scale - sigma ) + ( scale - min_size ) , name="loss") ``` , there are many loss functions for estimates of the new target approaches on the same pane but for 3D dimensions equation, they required the optimum way of optimizing and power of calculation savings when optimizing all dimensions is like you turn the scientists globe to find the location you know the answer then you can located both X and Y coordinates. 
 
 ```
 with tf.compat.v1.Session() as sess:
