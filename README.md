@@ -1,6 +1,10 @@
 # Optimizing_dimensions_values
 For Study Optimizing Dimensions values 3D, working with 3D objects its required dimensions to estimate of object shape and its neightbours. 
 
+## Loss function optimizing values ##
+
+We consider of both sigma values and minimum size scalable, optimizer adjusting of input dimensions value by sigma value called differentate equation as its nature optimize one dimension create feedback to next dimension with in the same equation. ``` Z = tf.nn.l2_loss( ( scale - sigma ) + ( scale - min_size ) , name="loss") ```
+
 ```
 with tf.compat.v1.Session() as sess:
     sess.run(tf.compat.v1.global_variables_initializer())
